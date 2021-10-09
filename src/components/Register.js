@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Login.scss";
 
-const Login = () => {
+export default function Register() {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,14 +23,14 @@ const Login = () => {
   return (
     <div className="form-signin">
       <form onSubmit={submitForm}>
-        <h2>Sign In </h2>
+        <h2>Please Register </h2>
+
         <input
           type="text"
           placeholder="Name"
           name={firstName}
           onChange={handleFirstName}
         />
-
         <input
           type="text"
           placeholder="Email Address"
@@ -43,11 +43,9 @@ const Login = () => {
           name={password}
           onChange={handlePassword}
         />
-        <button type="submit">sign in</button>
+        <button type="submit">Register</button>
         <p>&copy; 2021</p>
       </form>
     </div>
   );
-};
-
-export default Login;
+}

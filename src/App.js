@@ -1,13 +1,24 @@
-import { useState } from 'react';
-import './App.scss';
-
-import Login from './components/Login';
-
+import { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.scss";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import Nav from "./components/Nav";
 function App() {
-  const [ registered, setRegistered ] = useState(true);
+  const [registered, setRegistered] = useState(false);
   return (
     <div className="App">
-      <Login registered={registered}/>
+      <Nav />
+      <Router>
+        <Switch>
+          <Route path='/Register'>
+            <Register />
+          </Route>
+          <Route path='/Login'>
+            <Login />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

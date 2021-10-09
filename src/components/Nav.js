@@ -1,5 +1,6 @@
 import React from "react";
 import './Nav.scss';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 export default function Nav() {
   return (
@@ -7,8 +8,10 @@ export default function Nav() {
       <div className="left-side">MyBlog</div>
       <div className="right-side">
         <ul>
-          <li>Home</li>
-          <li>Register</li>
+         <Router>
+         <Link to='/'><li>Home</li></Link>
+         <Link to='/Register'> <li>Register</li></Link>
+         </Router>
         </ul>
       </div>
     </div>
