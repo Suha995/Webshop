@@ -1,0 +1,30 @@
+.Nav{
+    min-height: 10vh;
+    width: 100vw;
+    background-color: purple;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    .left-side{
+        font-size: 1.7rem;
+    }
+    .right-side{
+        ul{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            // justify-content: space-evenly;
+            li{
+                padding: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
