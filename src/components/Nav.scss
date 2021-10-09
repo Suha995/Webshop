@@ -24,7 +24,10 @@
                 padding: 20px;
                 cursor: pointer;
                 color: white;
-                border-bottom: none;
+                a{ //Does Link contain anchor tag inside??
+                    text-decoration: none;
+                    color: white;
+                }
             }
         }
     }
