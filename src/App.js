@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.scss";
-import Home from './components/Home';
-import Register from "./components/Register";
-import Login from "./components/Login";
-import Nav from "./components/Nav";
+import Home from './components/Pages/Home';
+import Register from "./components/Pages/Register";
+import Login from "./components/Pages/Login";
+import Nav from "./components/Navigation/Nav";
 import Products from './components/Products/Products';
 import { commerce } from './lib/commerce';
 
