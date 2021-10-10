@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Nav from "./components/Nav";
+import Products from './components/Products/Products'
 function App() {
   const [registered, setRegistered] = useState(false);
   return (
@@ -13,7 +14,7 @@ function App() {
       <Nav />
         <Switch>
         <Route exact path='/'>
-            <Home />
+            <Products />
           </Route>
           <Route path='/register'>
             <Register />

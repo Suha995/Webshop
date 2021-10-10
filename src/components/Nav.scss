@@ -13,6 +13,10 @@
     padding: 0 10%;
     .left-side{
         font-size: 1.7rem;
+        a{ //Does Link contain anchor tag inside??
+            text-decoration: none;
+            color: white;
+        }
     }
     .right-side{
         ul{
