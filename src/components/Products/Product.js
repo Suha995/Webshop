@@ -1,5 +1,6 @@
 import React,{ useState } from 'react';
 import './Products.scss';
+import {MdAddShoppingCart} from 'react-icons/md';
 export default function Product(props) {
 
     const addToCart = () => {
@@ -18,7 +19,7 @@ export default function Product(props) {
                             <p>{props.product.description}</p>
                         </div>
                         <div className='shopping-cart'>
-                        <button onClick={addToCart}><i class="fas fa-cart-plus fa-2x"></i></button>
+                        <button onClick={addToCart}><MdAddShoppingCart size='2em'/></button>
                         </div>
                     </div>
     )

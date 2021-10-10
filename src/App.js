@@ -1,13 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.scss";
 import Home from './components/Home';
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Nav from "./components/Nav";
-import Products from './components/Products/Products'
+import Products from './components/Products/Products';
+import { commerce } from './lib/commerce';
+
 function App() {
   const [registered, setRegistered] = useState(false);
+  const [ products, setProducts ] = useState([]);
+
+  const fetchProducts = async () => {
+    const { data } = await commerce.products.list();
+    setProducts(data);
+  }
+  useEffect(() => {
+    fetchProducts();
+  }, [])
+  console.log(products);
   return (
     <div className="App">
       <Router>
