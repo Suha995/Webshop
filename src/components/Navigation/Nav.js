@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import {MdAddShoppingCart} from 'react-icons/md';
 import { FcShop } from 'react-icons/fc';
 
-export default function Nav() {
+export default function Nav({ numberOfItems }) {
   return (
     <div className="Nav">
       <div className="left-side">
@@ -16,7 +16,7 @@ export default function Nav() {
          <li><Link to='/'>Home</Link></li>
          <li><Link to='/register'> Register</Link></li>
          <li><Link to='/login'> Login</Link></li>
-         <li><Link to='/shopping-cart'><MdAddShoppingCart size='2em' style={{verticalAlign: 'bottom'}}/></Link></li>
+         <li><Link to='/shopping-cart'><MdAddShoppingCart size='2em' style={{verticalAlign: 'bottom'}}/><span>{numberOfItems}</span></Link></li>
         </ul>
       </div>
     </div>

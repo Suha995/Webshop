@@ -1,17 +1,10 @@
 import React,{ useState } from 'react';
 import './Products.scss';
 import {MdAddShoppingCart} from 'react-icons/md';
-export default function Product({ product }) {
+export default function Product({ product, handleAddToCart}) {
 
 
-    console.log(product)
-    // const addToCart = () => {
-
-    // }
-//    return (
-//        <>
-//        </>
-//    )
+    // console.log(product)
     return (
         <div className='product' key={product.id}>
                         <div className='image'>
@@ -25,7 +18,7 @@ export default function Product({ product }) {
                             <p dangerouslySetInnerHTML={{__html:product.description}} />
                         </div>
                         <div className='shopping-cart'>
-                        <button><MdAddShoppingCart size='2em'/></button>
+                        <button onClick={() => handleAddToCart(product.id, 1)}><MdAddShoppingCart size='2em'/></button>
                         </div>
                     </div>
     )

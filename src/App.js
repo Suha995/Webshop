@@ -11,22 +11,35 @@ import { commerce } from './lib/commerce';
 function App() {
   // const [registered, setRegistered] = useState(false);
   const [ products, setProducts ] = useState([]);
+  const [ cart, setCart ] = useState({});
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
     setProducts(data);
   }
+  const fetchCart = async () => {
+    const cart = await commerce.cart.retrieve();
+    setCart(cart);
+  }
+  const handleAddToCart = async (productId, quantity) => {
+    const item  = await commerce.cart.add(productId, quantity);
+    setCart(item.cart);
+  } // I don't understand that
+
   useEffect(() => {
     fetchProducts();
+    fetchCart();
   }, [])
   console.log(products);
+  console.log(cart);
+  
   return (
     <div className="App">
       <Router>
-      <Nav />
+      <Nav numberOfItems={cart.total_items}/>
         <Switch>
         <Route exact path='/'>
-            <Products products={products}/>
+            <Products products={products} handleAddToCart={handleAddToCart}/>
           </Route>
           <Route path='/register'>
             <Register />
