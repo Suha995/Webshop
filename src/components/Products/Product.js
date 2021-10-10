@@ -1,25 +1,31 @@
 import React,{ useState } from 'react';
 import './Products.scss';
 import {MdAddShoppingCart} from 'react-icons/md';
-export default function Product(props) {
+export default function Product({ product }) {
 
-    const addToCart = () => {
 
-    }
+    console.log(product)
+    // const addToCart = () => {
+
+    // }
+//    return (
+//        <>
+//        </>
+//    )
     return (
-        <div className='product' key={props.product.id}>
+        <div className='product' key={product.id}>
                         <div className='image'>
-                        <img src={props.product.image} style={{width:'100%', height:'100%'}}/>
+                        <img src={product.image.url} style={{width:'100%', height:'100%'}}/>
                         </div>
                         <div className='name-price'>
-                            <p>{props.product.name}</p>
-                            <p>{props.product.price}</p>
+                            <p>{product.name}</p>
+                            <p>{product.price.formatted_with_symbol}</p>
                         </div>
                         <div className='description'>
-                            <p>{props.product.description}</p>
+                            <p dangerouslySetInnerHTML={{__html:product.description}} />
                         </div>
                         <div className='shopping-cart'>
-                        <button onClick={addToCart}><MdAddShoppingCart size='2em'/></button>
+                        <button><MdAddShoppingCart size='2em'/></button>
                         </div>
                     </div>
     )

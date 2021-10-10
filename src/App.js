@@ -9,7 +9,7 @@ import Products from './components/Products/Products';
 import { commerce } from './lib/commerce';
 
 function App() {
-  const [registered, setRegistered] = useState(false);
+  // const [registered, setRegistered] = useState(false);
   const [ products, setProducts ] = useState([]);
 
   const fetchProducts = async () => {
@@ -26,7 +26,7 @@ function App() {
       <Nav />
         <Switch>
         <Route exact path='/'>
-            <Products />
+            <Products products={products}/>
           </Route>
           <Route path='/register'>
             <Register />
