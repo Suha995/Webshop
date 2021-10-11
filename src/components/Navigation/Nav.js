@@ -16,7 +16,7 @@ export default function Nav({ numberOfItems }) {
          <li><Link to='/'>Home</Link></li>
          <li><Link to='/register'> Register</Link></li>
          <li><Link to='/login'> Login</Link></li>
-         <li><Link to='/shopping-cart'><MdAddShoppingCart size='2em' style={{verticalAlign: 'bottom'}}/><span>{numberOfItems}</span></Link></li>
+         <li><Link to='/shopping-cart'><MdAddShoppingCart size='2em' style={{verticalAlign: 'bottom'}}/><span style={{fontWeight: 'bold'}}>{numberOfItems}</span></Link></li>
         </ul>
       </div>
     </div>

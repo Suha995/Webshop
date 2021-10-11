@@ -8,7 +8,7 @@ export default function Product({ product, handleAddToCart}) {
     return (
         <div className='product' key={product.id}>
                         <div className='image'>
-                        <img src={product.image.url} style={{width:'100%', height:'100%'}}/>
+                        <img src={product.image.url} style={{width:'100%', height:'100%'}} alt='product-image'/>
                         </div>
                         <div className='name-price'>
                             <p>{product.name}</p>
