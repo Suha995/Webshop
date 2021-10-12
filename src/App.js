@@ -8,6 +8,7 @@ import Nav from "./components/Navigation/Nav";
 import Products from "./components/Products/Products";
 import { commerce } from "./lib/commerce";
 import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   // const [registered, setRegistered] = useState(false);
@@ -66,6 +67,9 @@ function App() {
             <Cart cart={cart} handleUpdateCart={handleUpdateCart}
              handleRemoveFromCart={handleRemoveFromCart}
              handleEmptyCart={handleEmptyCart}/>
+          </Route>
+          <Route path="/checkout">
+            <Checkout cart={cart} />
           </Route>
         </Switch>
       </Router>

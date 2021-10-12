@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Cart.scss";
+import { Link } from 'react-router-dom';
+import Checkout from "../Checkout/Checkout";
 
 const Cart = ({ cart, handleUpdateCart, handleRemoveFromCart, handleEmptyCart }) => {
 
-    const handleAddQuantity = (quantity) => {
-        return quantity + 1;
-    }
   const FilledCart = () => {
     return (
       <>
@@ -37,7 +36,7 @@ const Cart = ({ cart, handleUpdateCart, handleRemoveFromCart, handleEmptyCart })
         <div>
           <p>{cart.subtotal.formatted_with_symbol}</p>
           <button onClick={handleEmptyCart}>Empty Cart</button>
-          <button>Checkout</button>
+          <button><Link to='/checkout'>Checkout</Link></button>
         </div>
       </>
     );
