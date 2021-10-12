@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Cart.scss";
 
-const Cart = ({ cart }) => {
-  // const [ isEmpty, setIsEmpty ] = useState(true);
-  //   const isEmpty = (!cart.line_items.length); //every value other than 0 is truthy
+const Cart = ({ cart, handleUpdateCart, handleRemoveFromCart, handleEmptyCart }) => {
 
-  //   useEffect( () => {
-  //       setIsEmpty(cart.total_items === 0)
-  //   }, [])
-
+    const handleAddQuantity = (quantity) => {
+        return quantity + 1;
+    }
   const FilledCart = () => {
     return (
       <>
@@ -28,18 +25,18 @@ const Cart = ({ cart }) => {
                   <p>{item.price.formatted_with_symbol}</p>
                 </div>
                 <div className="quantity">
-                  <button>-</button>
+                  <button onClick={() => handleUpdateCart(item.id, item.quantity - 1)}>-</button>
                   <p>{item.quantity}</p>
-                  <button>+</button>
+                  <button onClick={() => handleUpdateCart(item.id, item.quantity + 1)}>+</button>
                 </div>
-                <button>Remove</button>
+                <button onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
               </div>
             );
           })}
         </div>
         <div>
           <p>{cart.subtotal.formatted_with_symbol}</p>
-          <button>Empty Cart</button>
+          <button onClick={handleEmptyCart}>Empty Cart</button>
           <button>Checkout</button>
         </div>
       </>
