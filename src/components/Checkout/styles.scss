@@ -3,6 +3,11 @@
     min-height: 50%;
     padding: 2%;
     border: purple solid 1px;
+    h2{
+        text-align: center;
+        padding: 2px;
+        margin: 10px 0;
+    }
     form{
         display: flex;
         flex-direction: column;

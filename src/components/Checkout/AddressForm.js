@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import "./styles.scss";
 import { commerce } from "../../lib/commerce";
+import { Link } from 'react-router-dom';
 
-const AddressForm = ({ token }) => {
+const AddressForm = ({ token, next }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
@@ -14,6 +15,7 @@ const AddressForm = ({ token }) => {
   const [shippingOption, setShippingOption] = useState("");
   const [shippingOptions, setShippingOptions] = useState([]);
   const [zip, setZip] = useState("");
+  
 
   const fetchCountries = async (tokenId) => {
     const response = await commerce.services.localeListShippingCountries(
@@ -52,13 +54,16 @@ const AddressForm = ({ token }) => {
       fetchOptions(token.id, country, shippingSubdivision);
   }, [shippingSubdivision]);
 
-  const handelSubmit = (e) => {
-    e.preventDefault();
-  };
+  // const handelSubmit = (e) => {
+  //   e.preventDefault();
+  //   });
+  // };
 
   return (
+
     <div className="address-form">
-      <form onSubmit={handelSubmit}>
+      <h2>Shipping Address</h2>
+      <form onSubmit={(data) => next({firstName, lastName, email, address, city, country, zip, shippingOption, shippingSubdivision})}>
         <div className="lines">
           <div className="line-sec">
             <p>First name:</p>
@@ -175,6 +180,7 @@ const AddressForm = ({ token }) => {
           </div>
         </div>
       </form>
+      <Link to='/shopping-cart'><button type="button">Back to cart</button></Link>
     </div>
   );
 };

@@ -10,6 +10,7 @@ import { commerce } from "./lib/commerce";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 
+
 function App() {
   // const [registered, setRegistered] = useState(false);
   const [products, setProducts] = useState([]);
@@ -69,6 +70,7 @@ function App() {
           <Route path="/checkout">
             <Checkout cart={cart} />
           </Route>
+         
         </Switch>
       </Router>
     </div>
