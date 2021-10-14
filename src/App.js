@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.scss";
-import Home from "./components/Pages/Home";
-import Register from "./components/Pages/Register";
-import Login from "./components/Pages/Login";
 import Nav from "./components/Navigation/Nav";
 import Products from "./components/Products/Products";
 import { commerce } from "./lib/commerce";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
-
 
 function App() {
   // const [registered, setRegistered] = useState(false);
@@ -70,7 +66,6 @@ function App() {
           <Route path="/checkout">
             <Checkout cart={cart} />
           </Route>
-         
         </Switch>
       </Router>
     </div>
@@ -78,12 +73,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route> */
-}

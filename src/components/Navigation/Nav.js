@@ -8,13 +8,13 @@ export default function Nav({ numberOfItems }) {
   return (
     <div className="Nav">
       <div className="left-side">
-        <FcShop size="2em" style={{ verticalAlign: "bottom" }} />
-        <Link to="/">WEBSHOP</Link>
+        <FcShop size="1.2em" style={{ verticalAlign: "bottom" }} />
+        <Link to="/">Webshop</Link>
       </div>
       <div className="right-side">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Products</Link>
           </li>
 
           <li>
@@ -31,7 +31,4 @@ export default function Nav({ numberOfItems }) {
     </div>
   );
 }
-{
-  /* <li><Link to='/register'> Register</Link></li>
-         <li><Link to='/login'> Login</Link></li> */
-}
+
