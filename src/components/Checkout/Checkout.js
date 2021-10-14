@@ -30,11 +30,16 @@ const Checkout = ({ cart }) => {
     setCurrentStep((pre) => pre + 1);
   };
 
+  const back = () => {
+    
+    setCurrentStep((pre) => pre - 1);
+  };
+
   switch (currentStep) {
     case 0:
       return token && <AddressForm token={token} next={next} />;
     case 1:
-      return <Payment shippingData={shippingData}/>; // to finalize the order
+      return <Payment shippingData={shippingData} token={token} back={back}/>; // to finalize the order
     case steps.length:
       return <div>Confirmation</div>;
     default:
