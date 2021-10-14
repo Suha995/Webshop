@@ -43,7 +43,7 @@ const AddressForm = ({ token, next }) => {
 
   useEffect(() => {
     fetchCountries(token.id);
-  }, []);
+  }, [token.id]);
 
   useEffect(() => {
     if (country) fetchSubdivisions("DE");
@@ -52,7 +52,7 @@ const AddressForm = ({ token, next }) => {
   useEffect(() => {
     if (shippingSubdivision)
       fetchOptions(token.id, country, shippingSubdivision);
-  }, [shippingSubdivision]);
+  }, [shippingSubdivision,token.id, country]);
 
   
 
