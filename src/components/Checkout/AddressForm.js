@@ -54,10 +54,7 @@ const AddressForm = ({ token, next }) => {
       fetchOptions(token.id, country, shippingSubdivision);
   }, [shippingSubdivision]);
 
-  // const handelSubmit = (e) => {
-  //   e.preventDefault();
-  //   });
-  // };
+  
 
   return (
 
